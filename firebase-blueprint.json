@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A product for sale in the shop.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "stock": { "type": "number" },
+        "category": { "type": "string" },
+        "status": { "type": "string" },
+        "image": { "type": "string" }
+      },
+      "required": ["name", "price", "stock", "category", "status", "image"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "An order placed by a customer.",
+      "type": "object",
+      "properties": {
+        "customer": { "type": "string" },
+        "email": { "type": "string" },
+        "product": { "type": "string" },
+        "amount": { "type": "number" },
+        "status": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["customer", "email", "product", "amount", "status", "date"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "A customer of the shop.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "orders": { "type": "number" },
+        "totalSpent": { "type": "number" },
+        "status": { "type": "string" },
+        "joined": { "type": "string" }
+      },
+      "required": ["name", "email", "orders", "totalSpent", "status", "joined"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "All products in the store."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "All orders placed by customers."
+    },
+    "/customers/{customerId}": {
+      "schema": { "$ref": "#/entities/Customer" },
+      "description": "All customers of the store."
+    }
+  }
+}

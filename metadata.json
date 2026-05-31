@@ -1,0 +1,6 @@
+{
+  "name": "AniYumi",
+  "description": "Premium anime figure collection modern homepage",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
